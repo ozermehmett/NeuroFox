@@ -1,6 +1,8 @@
 # NeuroFox
 <img src="assets/logo.png" alt="Logo" width="300" height="300">
 
+> **Note:** For the Turkish version of this document, refer to [README_TR.md](README_TR.md).
+
 ## 📄 Table of Contents
 
 1. [Data Generation Functions](#data-generation-functions)
