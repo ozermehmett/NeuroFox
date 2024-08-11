@@ -1,7 +1,7 @@
 # NeuroFox
 <img src="assets/logo.png" alt="Logo" width="300" height="300">
 
-> **Not: Bu belgenin İngilizce versiyonu için [README.md](README.md) dosyasına bakabilirsiniz.
+> **Not: Bu belgenin İngilizce versiyonu için [README.md](README.md) dosyasına bakabilirsiniz.**
 
 ## 📄 İçindekiler
 
