@@ -377,6 +377,6 @@ Eğitilmiş bir modeli kullanarak tahminler yapar.
   - `predictions`: Modelin tahminleri.
 
 ### 11. **Örnek Kullanımlar**
-XOR verisetine ait çıktılarını detaylı bir şekilde görmek için, bu depodaki [dosyasına](xor_model.py) dosyasına göz atabilirsiniz.
-IRIS verisetine ait çıktılarını detaylı bir şekilde görmek için, bu depodaki [dosyasına](iris_dataset_model.py) dosyasına göz atabilirsiniz.
-Binary Classification verisetine ait çıktılarını detaylı bir şekilde görmek için, bu depodaki [dosyasına](binary_classification_model.py) dosyasına göz atabilirsiniz.
+- XOR verisetine ait çıktılarını detaylı bir şekilde görmek için, bu depodaki [dosyasına](xor_model.py) dosyasına göz atabilirsiniz.
+- IRIS verisetine ait çıktılarını detaylı bir şekilde görmek için, bu depodaki [dosyasına](iris_dataset_model.py) dosyasına göz atabilirsiniz.
+- Binary Classification verisetine ait çıktılarını detaylı bir şekilde görmek için, bu depodaki [dosyasına](binary_classification_model.py) dosyasına göz atabilirsiniz.
