@@ -1,31 +1,32 @@
 # NeuroFox
+
 <img src="assets/logo.png" alt="Logo" width="300" height="300">
 
 > **Note:** For the Turkish version of this document, refer to [README_TR.md](README_TR.md).
 
 ## 📄 Table of Contents
 
-1. [Data Generation Functions](#data-generation-functions)
-2. [Neural Network Layers](#neural-network-layers)
-3. [Activation Functions](#activation-functions)
-4. [Regularization Layers](#regularization-layers)
-5. [Dense Layer](#dense-layer)
-6. [Loss Functions](#loss-functions)
-7. [Neural Network Class](#neural-network-class)
-8. [Optimizers](#optimizers)
-9. [Learning Rate Scheduler](#learning-rate-scheduler)
-10. [Utilities](#utilities)
-11. [Example Usage](#example-usage)
+1. [Project Summary](#project-summary)
+2. [Project File Structure](#project-file-structure)
+3. [Data Generation Functions](#data-generation-functions)
+4. [Neural Network Layers](#neural-network-layers)
+5. [Activation Functions](#activation-functions)
+6. [Regularization Layers](#regularization-layers)
+7. [Dense Layer](#dense-layer)
+8. [Loss Functions](#loss-functions)
+9. [Neural Network Class](#neural-network-class)
+10. [Optimizers](#optimizers)
+11. [Learning Rate Scheduler](#learning-rate-scheduler)
+12. [Utilities](#utilities)
+13. [Example Usage](#example-usage)
 
 ---
 
 ## 📂 Project Summary
 
-This project provides a neural network application that includes various neural network components and optimization techniques. It performs performance analyses using binary classification and various activation functions.
+NeuroFox is a neural network application that includes various neural network components and optimization techniques. It performs performance analyses using binary classification and various activation functions.
 
 ## 📂 Project File Structure
-
-The project has the following file structure:
 
 ```
 NeuroFox/
@@ -87,18 +88,18 @@ NeuroFox/
 
 ### File Descriptions
 
-- **`assets/`**: Directory containing visual files related to the project. This directory includes visual representations of activation function formulas.
-- **`data/`**: Files containing functions necessary for generating and testing training data.
-- **`layers/`**: Files containing neural network layers and activation functions. Details of activation functions are also found here.
+- **`assets/`**: Visual files related to the project, including activation function graphs.
+- **`data/`**: Functions for generating and testing training data.
+- **`layers/`**: Neural network layers and activation functions.
 - **`losses/`**: Loss functions and their implementations.
-- **`neural_network/`**: Files defining the building blocks of the neural network model.
-- **`optimizers/`**: Files containing different optimization algorithms and learning rate schedulers.
-- **`utils/`**: Functions for data processing, model management, and other utility tools.
-- **`README.md`**: General information about the project, installation instructions, usage details, and examples.
+- **`neural_network/`**: Building blocks of the neural network model.
+- **`optimizers/`**: Optimization algorithms and learning rate schedulers.
+- **`utils/`**: Functions for data processing, model management, and other utilities.
+- **`README.md`**: General project information, installation instructions, usage details, and examples.
 
-### 1. **Data Generation Functions**
+## 🔧 Data Generation Functions
 
-#### **`create_xor_data(num_samples)`**
+### **`create_xor_data(num_samples)`**
 Generates XOR data for binary classification tasks.
 
 - **Usage**:
@@ -107,12 +108,13 @@ Generates XOR data for binary classification tasks.
   ```
 
 - **Parameters**:
-  -  `num_samples` (int): Number of data points to generate.
+  - `num_samples` (int): Number of data points to generate.
+
 - **Returns**: 
   - `X`: Input features
   - `y`: Labels
 
-#### **`create_binary_classification_data(num_samples=1000)`**
+### **`create_binary_classification_data(num_samples=1000)`**
 Generates binary classification data with an option to add noise.
 
 - **Usage**:
@@ -122,18 +124,19 @@ Generates binary classification data with an option to add noise.
 
 - **Parameters**:
   - `num_samples` (int): Number of data points to generate.
+
 - **Returns**: 
   - `X`: Input features
   - `y`: Labels
 
-### 2. **Neural Network Layers**
+## 🧩 Neural Network Layers
 
-#### **`Layer`**
+### **`Layer`**
 Base class for all layers within the neural network.
 
-### 3. **Activation Functions**
+## ⚙️ Activation Functions
 
-#### **`ActivationSoftmax`**
+### **`ActivationSoftmax`**
 Applies the Softmax activation function to the input.
 
 - **Softmax Formula**:
@@ -141,23 +144,23 @@ Applies the Softmax activation function to the input.
 
 - <img src="assets/softmax_activation.jpg" alt="Softmax" width="500" height="300">
 
-#### **`ActivationSigmoid`**
+### **`ActivationSigmoid`**
 Applies the Sigmoid activation function to the input.
 
 - **Sigmoid Formula**:
-  -  $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+  - $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
 - <img src="assets/sigmoid_activation.png" alt="Sigmoid" width="500" height="300">
 
-#### **`ActivationReLU`**
+### **`ActivationReLU`**
 Applies the ReLU activation function to the input.
 
 - **ReLU Formula**:
-  -  $$\text{ReLU}(x) = \max(0, x)$$
+  - $$\text{ReLU}(x) = \max(0, x)$$
 
-- <img src="assets/relu_activation.png" alt="ReLu" width="500" height="300">
+- <img src="assets/relu_activation.png" alt="ReLU" width="500" height="300">
 
-#### **`ActivationLinear`**
+### **`ActivationLinear`**
 Applies the linear activation function to the input (no change).
 
 - **Linear Formula**:
@@ -165,9 +168,9 @@ Applies the linear activation function to the input (no change).
 
 - <img src="assets/linear_activation.png" alt="Linear" width="500" height="300">
 
-### 4. **Regularization Layers**
+## 🔄 Regularization Layers
 
-#### **`Dropout(rate=0.5)`**
+### **`Dropout(rate=0.5)`**
 Applies dropout regularization.
 
 - **Usage**: 
@@ -178,9 +181,9 @@ Applies dropout regularization.
 - **Parameters**:
   - `rate` (float): The proportion of input units to drop.
 
-### 5. **Dense Layer**
+## 🔢 Dense Layer
 
-#### **`Dense(input_size, output_size)`**
+### **`Dense(input_size, output_size)`**
 A fully connected layer in the neural network.
 
 - **Usage**: 
@@ -192,105 +195,83 @@ A fully connected layer in the neural network.
   - `input_size` (int): Number of input features.
   - `output_size` (int): Number of output features.
 
-### 6. **Loss Functions**
+## 📉 Loss Functions
 
-#### **`BinaryCrossentropy`**
+### **`BinaryCrossentropy`**
 Calculates binary cross-entropy loss.
 
 - **Formula**:
-  -  $$L = -\frac{1}{N}\sum_{i=1}^{N} [y_i \log(\hat{y}_i) + (1-y_i) \log(1-\hat{y}_i)]$$
+  - $$L = -\frac{1}{N}\sum_{i=1}^{N} [y_i \log(\hat{y}_i) + (1-y_i) \log(1-\hat{y}_i)]$$
 
-#### **`CategoricalCrossentropy`**
+### **`CategoricalCrossentropy`**
 Calculates categorical cross-entropy loss.
 
 - **Formula**:
-  -  $$L = -\sum_{i=1}^{N} y_i \log(\hat{y}_i)$$
+  - $$L = -\sum_{i=1}^{N} y_i \log(\hat{y}_i)$$
 
-#### **`BinaryFocalLoss(gamma=2, alpha=0.25)`**
+### **`BinaryFocalLoss(gamma=2, alpha=0.25)`**
 Calculates binary focal loss, often used to address class imbalance.
 
 - **Formula**:
   - $$\text{FL}(p_t) = -\alpha_t (1 - p_t)^\gamma \log(p_t)$$
 
-- **Parameters**:
+- **Parameters**
+
+:
   - `gamma` (float): Focusing parameter.
-  - `alpha` (
+  - `alpha` (float): Balancing factor.
 
-float): Balancing parameter.
+## 🔧 Neural Network Class
 
-### 7. **Neural Network Class**
-
-#### **`NeuralNetwork`**
-Defines the architecture and functionality of the neural network.
+### **`NeuralNetwork`**
+The main class for defining and training neural networks.
 
 - **Usage**:
   ```python
   nn = NeuralNetwork()
-  nn.add_layer(Dense(input_size=128, output_size=64))
-  nn.add_layer(ActivationReLU())
-  nn.compile(loss=BinaryCrossentropy(), optimizer=AdamOptimizer())
-  nn.fit(X_train, y_train, epochs=10)
+  nn.add(Dense(128, 64))
+  nn.add(ActivationReLU())
+  nn.compile(loss=BinaryCrossentropy(), optimizer=AdamOptimizer(learning_rate=0.001))
+  nn.train(X_train, y_train, epochs=10, batch_size=32)
   ```
 
-### 8. **Optimizers**
+## ⚙️ Optimizers
 
-#### **`AdamOptimizer(learning_rate=0.001)`**
-Implements the Adam optimization algorithm.
+### **`AdamOptimizer(learning_rate=0.001)`**
+The Adam optimization algorithm.
 
-- **Parameters**:
-  - `learning_rate` (float): Learning rate.
-
-#### **`SGDOptimizer(learning_rate=0.01)`**
-Implements the Stochastic Gradient Descent (SGD) optimization algorithm.
-
-- **Parameters**:
-  - `learning_rate` (float): Learning rate.
-
-#### **`AdagradOptimizer(learning_rate=0.01)`**
-Implements the Adagrad optimization algorithm.
+- **Usage**:
+  ```python
+  optimizer = AdamOptimizer(learning_rate=0.001)
+  ```
 
 - **Parameters**:
-  - `learning_rate` (float): Learning rate.
+  - `learning_rate` (float): Learning rate for the optimizer.
 
-#### **`RMSPropOptimizer(learning_rate=0.001, rho=0.9)`**
-Implements the RMSProp optimization algorithm.
+### **`SGDOptimizer(learning_rate=0.01)`**
+Stochastic Gradient Descent optimizer.
+
+- **Usage**:
+  ```python
+  optimizer = SGDOptimizer(learning_rate=0.01)
+  ```
 
 - **Parameters**:
-  - `learning_rate` (float): Learning rate.
-  - `rho` (float): Decay factor.
+  - `learning_rate` (float): Learning rate for the optimizer.
 
-### 9. **Learning Rate Scheduler**
+## 📈 Learning Rate Scheduler
 
-#### **`LearningRateScheduler(initial_lr=0.01, schedule=lambda epoch: 0.01)`**
+### **`LearningRateScheduler`**
 Adjusts the learning rate during training.
 
-- **Parameters**:
-  - `initial_lr` (float): Initial learning rate.
-  - `schedule` (function): Function that defines how the learning rate changes over epochs.
-
-### 10. **Utilities**
-
-#### **`one_hot_encode(labels, num_classes)`**
-Converts integer labels to one-hot encoded format.
-
 - **Usage**:
   ```python
-  one_hot_labels = one_hot_encode(labels, num_classes=3)
+  scheduler = LearningRateScheduler(schedule=lambda epoch: 0.001 * 0.95 ** epoch)
   ```
 
-- **Parameters**:
-  - `labels` (array-like): Integer labels.
-  - `num_classes` (int): Total number of classes.
+## 🛠️ Utilities
 
-#### **`standardize_data(X)`**
-Standardizes the dataset.
-
-- **Usage**:
-  ```python
-  standardized_X = standardize_data(X)
-  ```
-
-#### **`train_test_split(X, y, test_size=0.2)`**
+### **`train_test_split(X, y, test_size=0.2)`**
 Splits data into training and testing sets.
 
 - **Usage**:
@@ -298,7 +279,13 @@ Splits data into training and testing sets.
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
   ```
 
-### 11. **Example Usage**
+- **Parameters**:
+  - `X` (array): Features.
+  - `y` (array): Labels.
+  - `test_size` (float): Proportion of the dataset to include in the test split.
+
+## 📚 Example Usage
+
 
 #### **Binary Classification Example**
 
