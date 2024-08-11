@@ -116,7 +116,7 @@ Gürültü ekleme seçeneği ile ikili sınıflandırma verisi oluşturur.
 
 - **Kullanım**:
   ```python
-  X, y = create_binary_classification_data(samples=1000, noise=0.1)
+  X, y = create_binary_classification_data(num_samples=1000)
   ```
 
 - **Parametreler**:
